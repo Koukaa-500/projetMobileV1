@@ -1,0 +1,33 @@
+single-appareil {
+    .is-on {
+      ion-card-content, ion-card-header, ion-grid {
+        background-color: #1ab615;
+      }
+  
+      ion-button.full-color-danger {
+        background: #1ab615;
+        color: white;
+      }
+  
+      ion-button.full-color-secondary {
+        background: #1ab615;
+        color: white;
+      }
+    }
+  
+    .is-off {
+      ion-card-content, ion-card-header, ion-grid {
+        background-color: #f04f0f;
+      }
+  
+      ion-button.full-color-danger {
+        background: #f04f0f;
+        color: white;
+      }
+  
+      ion-button.full-color-secondary {
+        background: #f04f0f;
+        color: white;
+      }
+    }
+  }

@@ -1,25 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title> {{appareil?.name}}</ion-title>
+    <ion-title>{{ appareil.name }}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/appareil"></ion-back-button>
-    </ion-buttons>  
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card>
-    <ion-card-header>{{appareil?.name}}</ion-card-header>
+<ion-content>
+  <ion-card [ngClass]="{'is-on': appareil.isOn, 'is-off': !appareil.isOn}">
+      <ion-card-header>{{ appareil.name }}</ion-card-header>
     <ion-card-content>
-      <p *ngFor="let line of appareil?.description">{{ line }}</p>
+      <p *ngFor="let line of appareil.description">{{ line }}</p>
     </ion-card-content>
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button full-color="danger" [disabled]="!appareil?.isOn" expand="full" (click)="onToggleAppareil()">Eteindre</ion-button>
+          <ion-button full color="danger" [disabled]="!appareil.isOn" expand="full" (click)="onToggleAppareil()">Eteindre</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button ion-button full color="secondary"  [disabled]="!appareil?.isOn" expand="full" (click)="onToggleAppareil()">Allumer</ion-button>
+          <ion-button ion-button full color="secondary" [disabled]="appareil.isOn" expand="full" (click)="onToggleAppareil()">Allumer</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
